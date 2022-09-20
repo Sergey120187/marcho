@@ -4,6 +4,13 @@ body {
   line-height: 26px;
   color: $default;
   background-color: #ccc;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.main {
+  flex-grow: 1;
 }
 
 .container {
