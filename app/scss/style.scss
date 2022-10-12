@@ -23,7 +23,7 @@
     @extend %roboto-400;
     color: $title;
     text-transform: uppercase;
-    padding-bottom:3px;
+    padding-bottom: 0 2px 3px;
     transition: color 0.3s;
     &:hover {
       color: $accent;
