@@ -1,10 +1,12 @@
 @import 'vars';
 @import 'fonts';
 @import 'reset';
+@import 'libs';
 @import 'global';
 
 .header {
   padding: 40px 0;
+
   &__wrap {
     display: flex;
     justify-content: space-between;
@@ -16,20 +18,24 @@
   &__list {
     display: flex;
   }
+
   &__item:not(:last-child) {
     margin-right: 35px;
   }
+
   &__link {
     @extend %roboto-400;
     color: $title;
     text-transform: uppercase;
     padding-bottom: 0 2px 3px;
     transition: color 0.3s;
+
     &:hover {
       color: $accent;
       border-bottom: 1px solid $accent;
     }
   }
+
   &__link--active {
     @extend %roboto-700;
     color: $accent;
@@ -38,12 +44,15 @@
 
 .user-nav {
   display: flex;
+
   &__link {
     position: relative;
   }
+
   &__link:not(:last-child) {
     margin-right: 25px;
   }
+
   &__num {
     position: absolute;
     height: 20px;
@@ -67,44 +76,55 @@
   padding: 70px 0 40px;
   border-bottom: 1px solid #ececec;
   display: flex;
+
   &__contact {
     width: 250px;
     margin-right: 50px;
   }
+
   &__nav {
     width: 170px;
     margin-right: 30px;
   }
+
   &__form {
     max-width: 470px;
   }
+
   &__logo {
     display: block;
     margin-bottom: 34px;
   }
+
   &__links {
     display: block;
     margin-bottom: 10px;
   }
+
   &__social {
     display: flex;
     align-items: center;
     padding-top: 30px;
   }
+
   &__social-link {
     transition: all .3s;
+
     path {
       fill: $default;
     }
+
     &:hover {
       path {
         fill: $accent;
       }
     }
   }
+
   &__social-item:not(:last-child) {
     margin-right: 18px;
   }
+
   &__title {
     @extend %roboto-400;
     font-size: 22px;
@@ -112,13 +132,16 @@
     color: $title;
     margin-bottom: 40px;
   }
+
   &__list-link {
     display: block;
     margin-bottom: 10px;
   }
+
   &__text {
     margin-bottom: 25px;
   }
+
   &__input {
     max-width: 320px;
     width: 100%;
@@ -126,12 +149,10 @@
     padding: 12px 10px 12px 15px;
     box-shadow: 0px 7px 20px 0px rgba(192, 192, 192, 0.3);
   }
+
   &__btn {
-    color: #fff;
-    background-color: $accent;
-    text-transform: uppercase;
+   @extend %btn;
     padding: 12px 26px;
-    box-shadow: 0px 7px 20px 0px rgba(255, 17, 48, 0.3);
   }
 }
 
@@ -141,6 +162,7 @@
   justify-content: space-between;
   align-items: center;
   font-size: 12px;
+
   &__accept-img {
     display: inline;
     vertical-align: middle;
@@ -148,9 +170,97 @@
   }
 }
 
-
-
+.top-slider {
+  background-image: url('../images/top-slider-bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: $bg;
+  padding-top: 65px;
   
+
+  &__container {
+    max-width: 1560px;
+  }
+
+  &__content {
+    padding-left: 175px;
+    padding-top: 125px;
+  }
+
+  &__item {
+    display: flex !important;
+    justify-content: space-between;
+  }
+
+  &__title {
+    max-width: 670px;
+    font-size: 58px;
+    line-height: 68px;
+    color: $title;
+    @extend %roboto-700;
+    margin-bottom: 35px;
+  }
+
+  &__text {
+    margin-bottom: 55px;
+    max-width: 470px;
+  }
+
+  &__link {
+    @extend %btn;
+    padding: 14px 35px;
+  }
+
+  .slick-slide {
+    height: auto;
+  }
+  
+  .slick-dots {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-top: -26px;
+    top: -44px;
+    li {
+      padding: 0 5px;
+      line-height: 0;
+      button {
+        padding: 0;
+        font-size: 0;
+        background-color: transparent;
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        border: 1px solid transparent;
+        position: relative;
+
+        &::before {
+          content: '';
+          position: absolute;
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background-color: $default;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+      &.slick-active {
+        button {
+          border-color: $accent;
+          &::before {
+            background-color: $accent;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
 
 
 
